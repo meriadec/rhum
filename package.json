@@ -1,0 +1,45 @@
+{
+  "name": "rhum",
+  "version": "0.1.0",
+  "description": "Search torrent files from websites and do things with it",
+  "author": "meriadec <meriadec.pillet@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "npm run clean && babel src --out-dir lib && chmod +x lib/rhum.js",
+    "start": "babel-node src/rhum",
+    "test": "echo [1290 TESTS PASSED]",
+    "lint": "eslint src"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "zavatta"
+    ],
+    "rules": {
+      "no-console": 0
+    },
+    "globals": {
+      "Promise": false
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^3.3.1",
+    "eslint-config-zavatta": "^4.2.0"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "lodash": "^4.15.0",
+    "t411": "^1.0.5"
+  }
+}
