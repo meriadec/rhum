@@ -1,6 +1,6 @@
 {
   "name": "rhum",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Search torrent files from websites and do things with it",
   "author": "meriadec <meriadec.pillet@gmail.com>",
   "repository": {
@@ -8,7 +8,9 @@
     "url": "git+https://github.com/meriadec/rhum.git"
   },
   "license": "MIT",
-  "main": "dist/index.js",
+  "bin": {
+    "rhum": "./lib/rhum.js"
+  },
   "scripts": {
     "clean": "rm -rf lib",
     "build": "npm run clean && babel src --out-dir lib && chmod +x lib/rhum.js",
