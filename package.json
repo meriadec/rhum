@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Search torrent files from websites and do things with it",
   "author": "meriadec <meriadec.pillet@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meriadec/rhum.git"
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
