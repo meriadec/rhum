@@ -1,8 +1,10 @@
 import _ from 'lodash'
+import chalk from 'chalk'
+import slug from 'slugg'
 import fs from 'fs'
 import t411 from 't411'
 
-import { bytesToSize } from '../helpers'
+import { bytesToSize, log } from '../helpers'
 
 const AUTH = {
   USERNAME: process.env.T411_USERNAME,
@@ -16,12 +18,10 @@ const opts = {
 }
 
 const createConnector = () => new Promise((resolve, reject) => {
-  console.log('Creating connector...')
   const client = new t411()
   client.auth(AUTH.USERNAME, AUTH.PASSWORD, err => {
     if (err) { return reject(err) }
     connector = client
-    console.log('Connection established.')
     resolve(client)
   })
 })
@@ -32,7 +32,7 @@ const getConnector = () => {
 }
 
 const searchTerm = (client, term) => new Promise((resolve, reject) => {
-  console.log(`Searching "${term}"`)
+  log(`Searching "${term}" on t411...`)
   client.search(term, opts, (err, res) => {
     if (err) { return reject(err) }
     resolve(res)
@@ -47,7 +47,7 @@ const downloadId = (client, id) => new Promise((resolve, reject) => {
 })
 
 const writeFile = (item, buf) => new Promise((resolve, reject) => {
-  const fileName = `${item.name}.torrent`.trim()
+  const fileName = `${slug(item.name)}.torrent`.trim()
   fs.writeFile(fileName, buf, (err) => {
     if (err) { return reject(err) }
     resolve(fileName)
@@ -76,5 +76,5 @@ export const download = item => getConnector()
   .then(client => downloadId(client, item.id))
   .then(buf => writeFile(item, buf))
   .then(fileName => {
-    console.log(`${fileName} has been downloaded!`)
+    log(`${chalk.blue(fileName)} has been downloaded!`)
   })

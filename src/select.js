@@ -46,9 +46,11 @@ export default items => new Promise((resolve, reject) => {
         header: {
           bold: true,
         },
-        selected: {
-          bg: 'white',
-          fg: 'black',
+        cell: {
+          selected: {
+            bg: 'white',
+            fg: 'black',
+          },
         },
       },
       data: [

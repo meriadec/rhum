@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import chalk from 'chalk'
 
 export const bytesToSize = (bytes) => {
   const b = Number(bytes)
@@ -16,4 +17,8 @@ export const displayError = err => {
     return console.log(err)
   }
   console.log('Shit happened.')
+}
+
+export const log = str => {
+  console.log(`${chalk.gray('>>')} ${str}`)
 }
