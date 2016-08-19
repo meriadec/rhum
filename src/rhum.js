@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import * as t411 from './modules/t411'
 import select from './select'
 import { displayError } from './helpers'
