@@ -1,6 +1,6 @@
 {
   "name": "rhum",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Search torrent files from websites and do things with it",
   "author": "meriadec <meriadec.pillet@gmail.com>",
   "repository": {
