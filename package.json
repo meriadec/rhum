@@ -29,7 +29,8 @@
       "zavatta"
     ],
     "rules": {
-      "no-console": 0
+      "no-console": 0,
+      "no-throw-literal": 0
     },
     "globals": {
       "Promise": false
@@ -46,6 +47,7 @@
   "dependencies": {
     "blessed": "^0.1.81",
     "chalk": "^1.1.3",
+    "commander": "^2.9.0",
     "lodash": "^4.15.0",
     "slugg": "^1.0.0",
     "t411": "^1.0.5"

@@ -32,7 +32,7 @@ const getConnector = () => {
 }
 
 const searchTerm = (client, term) => new Promise((resolve, reject) => {
-  log(`Searching "${term}" on t411...`)
+  log(`Searching "${term}"...`)
   client.search(term, opts, (err, res) => {
     if (err) { return reject(err) }
     resolve(res)

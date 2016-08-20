@@ -14,9 +14,9 @@ export const bytesToSize = (bytes) => {
 
 export const displayError = err => {
   if (_.isString(err)) {
-    return console.log(err)
+    return console.log(chalk.red(err))
   }
-  console.log('Shit happened.')
+  console.log(chalk.red('Shit happened.'))
 }
 
 export const log = str => {
