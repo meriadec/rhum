@@ -6,6 +6,8 @@
 
 [![rhum](https://nodei.co/npm/rhum.png)](https://www.npmjs.com/package/rhum)
 
+![demo](demo.gif)
+
 Search torrents from multiple sites (1 for the moment, aha), and.. do things
 with it (for the moment, download it).
 
